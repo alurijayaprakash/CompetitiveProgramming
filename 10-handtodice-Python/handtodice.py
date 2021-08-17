@@ -6,5 +6,14 @@
 # Hint: You might find // and % useful here, and also getKthDigit().
 
 def handtodice(hand):
-	# your code goes here
-	pass
+	lenhand = len(str(hand))
+	x = hand // 10**(lenhand-1)
+	hand = hand % 10**(lenhand-1)
+	# print(hand)
+	y = hand // 10**(lenhand-2)
+	hand = hand % 10**(lenhand-2)
+	z = hand // 10**(lenhand-3)
+	return x,y,z
+
+
+# print(handtodice(123))
