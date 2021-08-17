@@ -7,5 +7,27 @@
 
 
 def fun_set_kth_digit(n, k, d):
-		return 0
+	
+	if n < 0:
+		n = abs(n)
+		flag = True
+	else:
+		flag = False
+	numstr = str(n)
+	numlen = len(str(n))
+	print(flag, numstr, numlen)
+	if k == numlen:
+		tempnum =  int(str(d) + numstr)
+		if flag:
+			return -(tempnum)
+		return tempnum
+	else:
+		if k == 0:
+			return int(numstr[:2] + str(d))
+		if k == 1:
+			return int(numstr[:1] + str(d) + numstr[numlen-1])
+		if k == 2:
+			return int(str(d) + numstr[1:])
 
+
+# print(fun_set_kth_digit(-468, 3, 1))
