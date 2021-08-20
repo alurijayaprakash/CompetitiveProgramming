@@ -11,8 +11,28 @@
 
 
 def fun_applycaesarcipher(msg, shift):
-	return ""
+	result = ""
+	lowcase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+	upcase = [k.upper() for k in lowcase]
+	# print(lowcase, upcase)
+	for char in msg:
+		if char in lowcase:
+			temp = ord(char) + shift
+			if temp > 122:
+				temp = temp - 26
+			if temp < 97:
+				temp = temp + 26
+			result = result + chr(temp)
+		elif char in upcase:
+			temp = ord(char) + shift
+			if temp > 90:
+				temp = temp - 26
+			if temp < 65:
+				temp = temp + 26
+			result = result + chr(temp)
+		else:
+			result = result + char
+	return result
 
-
-
+print(fun_applycaesarcipher("We Attack At Dawn", 1))
 
