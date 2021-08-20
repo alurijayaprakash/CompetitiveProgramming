@@ -6,4 +6,11 @@
 
 
 def fun_get_kth_digit(digit, k):
-	return 0
+	digit = str(abs(digit))
+	lendigit = len(digit)
+	print("digit is", digit, lendigit, k)
+	if (lendigit <= k):
+		return 0
+	return int(digit[lendigit-k-1])
+
+print(fun_get_kth_digit(-789,3))
