@@ -1,1 +1,1 @@
-# CheckCp
+# CompetitiveProgramming @ IIIT Hyderabad
